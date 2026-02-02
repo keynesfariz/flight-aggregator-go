@@ -61,6 +61,409 @@ POST /search
   }
 }
 ```
+**Response**
+```
+{
+  "search_criteria": {
+    "origin": "CGK",
+    "destination": "DPS",
+    "departureDate": "2025-12-15",
+    "returnDate": null,
+    "passengers": 1,
+    "cabinClass": "economy",
+    "filters": {
+      "priceMin": 0,
+      "priceMax": 0,
+      "maxStops": 0,
+      "airlines": null,
+      "departureTimeRange": "",
+      "arrivalTimeRange": "",
+      "maxDurationMinutes": 0
+    },
+    "sortBy": "best_value",
+    "sortOrder": "asc"
+  },
+  "metadata": {
+    "total_results": 9,
+    "providers_queried": 4,
+    "providers_succeeded": 4,
+    "providers_failed": 0,
+    "search_time_ms": 6711,
+    "cache_hit": false
+  },
+  "flights": [
+    {
+      "id": "QZ7250_AirAsia",
+      "provider": "AirAsia",
+      "airline": {
+        "name": "AirAsia",
+        "code": "QZ"
+      },
+      "flight_number": "QZ7250",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T15:15:00+07:00",
+        "timestamp": 1765786500
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T20:35:00+08:00",
+        "timestamp": 1765802100
+      },
+      "duration": {
+        "total_minutes": 259,
+        "formatted": "04h 19m"
+      },
+      "stops": 1,
+      "price": {
+        "amount": 485000,
+        "currency": "IDR",
+        "formatted": "IDR 485.000"
+      },
+      "available_seats": 88,
+      "cabin_class": "economy",
+      "aircraft": null,
+      "amenities": null,
+      "baggage": {
+        "carry_on": "Cabin Baggage Only",
+        "checked": " Checked Bags Additional Fee"
+      }
+    },
+    {
+      "id": "ID7042_BatikAir",
+      "provider": "BatikAir",
+      "airline": {
+        "name": "Batik Air",
+        "code": "ID"
+      },
+      "flight_number": "ID7042",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T18:45:00+07:00",
+        "timestamp": 1765799100
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T23:50:00+08:00",
+        "timestamp": 1765813800
+      },
+      "duration": {
+        "total_minutes": 185,
+        "formatted": "3h 5m"
+      },
+      "stops": 1,
+      "price": {
+        "amount": 950000,
+        "currency": "IDR",
+        "formatted": "IDR 950.000"
+      },
+      "available_seats": 41,
+      "cabin_class": "economy",
+      "aircraft": "Airbus A320",
+      "amenities": [
+        "Snack"
+      ],
+      "baggage": {
+        "carry_on": "7Kg Cabin",
+        "checked": " 20Kg Checked"
+      }
+    },
+    {
+      "id": "GA410_GarudaIndonesia",
+      "provider": "GarudaIndonesia",
+      "airline": {
+        "name": "Garuda Indonesia",
+        "code": "GA"
+      },
+      "flight_number": "GA410",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T09:30:00+07:00",
+        "timestamp": 1765765800
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T12:25:00+08:00",
+        "timestamp": 1765772700
+      },
+      "duration": {
+        "total_minutes": 115,
+        "formatted": "01h 55m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 1450000,
+        "currency": "IDR",
+        "formatted": "IDR 1.450.000"
+      },
+      "available_seats": 15,
+      "cabin_class": "economy",
+      "aircraft": "Airbus A330-300",
+      "amenities": [
+        "wifi",
+        "power_outlet",
+        "meal",
+        "entertainment"
+      ],
+      "baggage": {
+        "carry_on": "1",
+        "checked": "2"
+      }
+    },
+    {
+      "id": "GA400_GarudaIndonesia",
+      "provider": "GarudaIndonesia",
+      "airline": {
+        "name": "Garuda Indonesia",
+        "code": "GA"
+      },
+      "flight_number": "GA400",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T06:00:00+07:00",
+        "timestamp": 1765753200
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T08:50:00+08:00",
+        "timestamp": 1765759800
+      },
+      "duration": {
+        "total_minutes": 110,
+        "formatted": "01h 50m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 1250000,
+        "currency": "IDR",
+        "formatted": "IDR 1.250.000"
+      },
+      "available_seats": 28,
+      "cabin_class": "economy",
+      "aircraft": "Boeing 737-800",
+      "amenities": [
+        "wifi",
+        "meal",
+        "entertainment"
+      ],
+      "baggage": {
+        "carry_on": "1",
+        "checked": "2"
+      }
+    },
+    {
+      "id": "ID6520_BatikAir",
+      "provider": "BatikAir",
+      "airline": {
+        "name": "Batik Air",
+        "code": "ID"
+      },
+      "flight_number": "ID6520",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T13:30:00+07:00",
+        "timestamp": 1765780200
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T16:20:00+08:00",
+        "timestamp": 1765786800
+      },
+      "duration": {
+        "total_minutes": 110,
+        "formatted": "1h 50m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 1180000,
+        "currency": "IDR",
+        "formatted": "IDR 1.180.000"
+      },
+      "available_seats": 18,
+      "cabin_class": "economy",
+      "aircraft": "Boeing 737-800",
+      "amenities": [
+        "Meal",
+        "Beverage",
+        "Entertainment"
+      ],
+      "baggage": {
+        "carry_on": "7Kg Cabin",
+        "checked": " 20Kg Checked"
+      }
+    },
+    {
+      "id": "ID6514_BatikAir",
+      "provider": "BatikAir",
+      "airline": {
+        "name": "Batik Air",
+        "code": "ID"
+      },
+      "flight_number": "ID6514",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T07:15:00+07:00",
+        "timestamp": 1765757700
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T10:00:00+08:00",
+        "timestamp": 1765764000
+      },
+      "duration": {
+        "total_minutes": 105,
+        "formatted": "1h 45m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 1100000,
+        "currency": "IDR",
+        "formatted": "IDR 1.100.000"
+      },
+      "available_seats": 32,
+      "cabin_class": "economy",
+      "aircraft": "Airbus A320",
+      "amenities": [
+        "Snack",
+        "Beverage"
+      ],
+      "baggage": {
+        "carry_on": "7Kg Cabin",
+        "checked": " 20Kg Checked"
+      }
+    },
+    {
+      "id": "QZ524_AirAsia",
+      "provider": "AirAsia",
+      "airline": {
+        "name": "AirAsia",
+        "code": "QZ"
+      },
+      "flight_number": "QZ524",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T10:00:00+07:00",
+        "timestamp": 1765767600
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T12:45:00+08:00",
+        "timestamp": 1765773900
+      },
+      "duration": {
+        "total_minutes": 105,
+        "formatted": "01h 45m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 720000,
+        "currency": "IDR",
+        "formatted": "IDR 720.000"
+      },
+      "available_seats": 54,
+      "cabin_class": "economy",
+      "aircraft": null,
+      "amenities": null,
+      "baggage": {
+        "carry_on": "Cabin Baggage Only",
+        "checked": " Checked Bags Additional Fee"
+      }
+    },
+    {
+      "id": "QZ520_AirAsia",
+      "provider": "AirAsia",
+      "airline": {
+        "name": "AirAsia",
+        "code": "QZ"
+      },
+      "flight_number": "QZ520",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T04:45:00+07:00",
+        "timestamp": 1765748700
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T07:25:00+08:00",
+        "timestamp": 1765754700
+      },
+      "duration": {
+        "total_minutes": 100,
+        "formatted": "01h 40m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 650000,
+        "currency": "IDR",
+        "formatted": "IDR 650.000"
+      },
+      "available_seats": 67,
+      "cabin_class": "economy",
+      "aircraft": null,
+      "amenities": null,
+      "baggage": {
+        "carry_on": "Cabin Baggage Only",
+        "checked": " Checked Bags Additional Fee"
+      }
+    },
+    {
+      "id": "QZ532_AirAsia",
+      "provider": "AirAsia",
+      "airline": {
+        "name": "AirAsia",
+        "code": "QZ"
+      },
+      "flight_number": "QZ532",
+      "departure": {
+        "airport": "CGK",
+        "city": "Jakarta",
+        "datetime": "2025-12-15T19:30:00+07:00",
+        "timestamp": 1765801800
+      },
+      "arrival": {
+        "airport": "DPS",
+        "city": "Denpasar",
+        "datetime": "2025-12-15T22:10:00+08:00",
+        "timestamp": 1765807800
+      },
+      "duration": {
+        "total_minutes": 100,
+        "formatted": "01h 40m"
+      },
+      "stops": 0,
+      "price": {
+        "amount": 595000,
+        "currency": "IDR",
+        "formatted": "IDR 595.000"
+      },
+      "available_seats": 72,
+      "cabin_class": "economy",
+      "aircraft": null,
+      "amenities": null,
+      "baggage": {
+        "carry_on": "Cabin Baggage Only",
+        "checked": " Checked Bags Additional Fee"
+      }
+    }
+  ]
+}
+```
 
 ## Under the Hood
 
