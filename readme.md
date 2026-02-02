@@ -21,6 +21,9 @@ go mod tidy
 go run main.go
 ```  
 
+**Optional**
+Make an `.env` file from `.env.example`
+
 ## Making an API Request
 
 After running the application, make a **POST** request to  `/search/` with `application/json` on the app, usually it's served on `localhost:8080`
@@ -30,7 +33,7 @@ After running the application, make a **POST** request to  `/search/` with `appl
 POST /search
 ```
 
-**Required Request Body** 
+**Example Request Body on Required fields** 
 ```
 {
   "origin": "CGK",
@@ -39,7 +42,7 @@ POST /search
 }
 ```
 
-**Full Request Body**
+**Example of Full Request Body**
 ```
 {
   "origin": "CGK",
@@ -136,13 +139,23 @@ POST /search
 }
 ```
 
+## Design Choices
+
+**Separation of concerns**
+* Providers: all files in src/providers/* simulate fetching from airline providers, load JSON mocks, and normalize each provider’s unique format into the aggregated schema in result.
+* Aggregation: `services/search.service.go` runs providers.Fetch in parallel with per-provider timeouts and merges into result.
+* Utils: normalize flight id, parse/format time, format currency, filters, sorts, and gives scoring to aggregated flight results.
+* Best Value sorting is implemented using Weighted Scoring Model
+	* Negavite parameters, the lower, the better: price, duration, stops; weight: 0.8
+ 	* Positive parameters, the higher, the better: free checked baggage, amenities; weight: 0.2
+
 ## Under the Hood
 
 - Simulates multiple airline providers with each provider has its own **configurable real-world conditions** and **retry logic** with exponential backoff set to 8 ms.
 - Parallel fetch execution on all airline providers using `sync.WaitGroup`
 - Caches set on both:
 	- Mocked Provider's result
-	- User's search result, with **idempotency** implemented on search criteria, marked with `"cache_hit": true` on response' metadata
+	- User's search result, with **idempotency** implemented on search criteria, marked with `"cache_hit": true` on response's `metadata`
 - Filterable by:
 	- price range `priceMin` and `priceMax`
 	- max number of stops `maxStops`
@@ -155,6 +168,6 @@ POST /search
 	- `duration` in `asc` and `desc` order
 	- `departure` in `asc` and `desc` order
 	- `arrival` in `asc` and `desc` order
-- **Best Value** sorting is implemented using Weighted Scoring Model
+
 - Timezone conversions to Go's `2006-01-02T15:04:05-07:00` format
-- Support for displaying currency in IDR formatting with thousands separator
+- Support for displaying currency in IDR formatting with thousands separator in `price.formatted`
