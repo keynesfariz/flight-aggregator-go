@@ -1,0 +1,16 @@
+services:
+  bookcabin-app:
+    image: ${APP_NAME}
+    environment:
+      APP_PORT: ${APP_PORT}
+      REDIS_HOST: ${REDIS_HOST}:${REDIS_PORT}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      REDIS_DATABASE: ${REDIS_DATABASE}
+      FLIGHT_PROVIDER_MAX_RETRY: ${FLIGHT_PROVIDER_MAX_RETRY}
+      FLIGHT_PROVIDER_BACKOFF_IN_MS: ${FLIGHT_PROVIDER_BACKOFF_IN_MS}
+    ports:
+      - '8080:${APP_PORT}'
+  bookcabin-redis:
+    image: redis:8.4
+    ports:
+      - '6379:${REDIS_PORT}'
